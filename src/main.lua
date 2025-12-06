@@ -40,12 +40,14 @@ public.config = config -- so other mods can access our config
 
 local function melskin_example()
     melskin = rom.mods["zerp-MelSkin"]
-    if melskin ~= nil and melskin.AddEntryToDressData ~= nil then
+    if melskin ~= nil and melskin.AddEntriesToDressData ~= nil then
         print("inserting skin")
         local dressdata = {
-            GrannyTexture = "zerp-MelSkin_Example/Negative",
+            Negative = {
+                GrannyTexture = "zerp-MelSkin_Example/Negative",
+            }
         }
-        melskin.AddEntryToDressData("Negative", dressdata, _PLUGIN.guid .. "zerp-MelSkin_Example")
+        melskin.AddEntriesToDressData(dressdata, {_PLUGIN.guid .. "zerp-MelSkin_Example"})
         melskin.config.dress = "Negative"
     end
 end
