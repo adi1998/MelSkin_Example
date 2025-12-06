@@ -38,11 +38,7 @@ config = chalk.auto 'config.lua'
 -- ^ this updates our `.cfg` file in the config folder!
 public.config = config -- so other mods can access our config
 
-local function on_ready()
-    -- what to do when we are ready, but not re-do on reload.
-    if config.enabled == false then return end
-    mod = modutil.mod.Mod.Register(_PLUGIN.guid)
-    
+local function melskin_example()
     melskin = rom.mods["zerp-MelSkin"]
     if melskin ~= nil and melskin.AddEntryToDressData ~= nil then
         print("inserting skin")
@@ -52,7 +48,13 @@ local function on_ready()
         melskin.AddEntryToDressData("Negative", dressdata, _PLUGIN.guid .. "zerp-MelSkin_Example")
         melskin.config.dress = "Negative"
     end
+end
 
+local function on_ready()
+    -- what to do when we are ready, but not re-do on reload.
+    if config.enabled == false then return end
+    mod = modutil.mod.Mod.Register(_PLUGIN.guid)
+    melskin_example()
 end
 
 local function on_reload()
