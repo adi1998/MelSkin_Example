@@ -50,6 +50,7 @@ local function on_ready()
             GrannyTexture = "zerp-MelSkin_Example/Negative",
         }
         melskin.AddEntryToDressData("Negative", dressdata, _PLUGIN.guid .. "zerp-MelSkin_Example")
+        melskin.config.dress = "Negative"
     end
 
 end
