@@ -43,12 +43,12 @@ local function melskin_example()
     if melskin ~= nil and melskin.AddEntriesToDressData ~= nil then
         print("inserting skin")
         local dressdata = {
-            Negative = {
-                GrannyTexture = "zerp-MelSkin_Example/Negative",
+            Aaron = {
+                GrannyTexture = "zerp-MelSkin_Example/skins/Aaron",
             }
         }
         melskin.AddEntriesToDressData(dressdata, {_PLUGIN.guid .. "zerp-MelSkin_Example"})
-        melskin.config.dress = "Negative"
+        melskin.config.dress = "Aaron"
     end
 end
 
